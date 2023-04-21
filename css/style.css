@@ -1,0 +1,77 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: rgb(51, 49, 49);
+    height: 120vh;
+}
+
+.logo{
+    display: block;
+    margin: auto;
+    height: 50px;
+    width: 50px;
+    margin-top: 0.5rem;
+}
+
+.container{
+    max-width: 80vw;
+    height: 80vh;
+    background-color: white;
+    margin: auto;
+    margin-top: 1.4rem;
+    border-radius: 1rem;
+    /* Below means when the messages will increse then it will make it scrollable */
+    overflow-y: auto; 
+}
+
+.message{
+    background-color: gray;
+    width: 20vw;
+    height: 2vh;
+    padding: 2rem;
+    margin: 1rem 0.1rem;
+    border: 0.1rem solid red;
+    border-radius: 0.5rem;
+}
+
+.Left{
+    float: left;
+    clear: both;
+    margin: 0rem 0.6rem;
+}
+
+.Right{
+    float: right;
+    clear: both;
+    margin: 0rem 0.6rem;
+    margin-top: 0.9rem;
+}
+
+.send{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.5rem;
+    position: sticky;
+    top: 0rem;
+}
+
+#messageInput{
+    width: 75vw;
+    border-radius: 0.5rem;
+    height: 4vh;
+    padding: 0.2rem;
+    padding-left: 0.3rem;
+    font-size: 1rem;
+}
+
+.btn{
+    width: 4vw;
+    border-radius: 0.5rem;
+    height: 5.5vh;
+    cursor: pointer;
+    border: 0.1rem solid black;
+}
