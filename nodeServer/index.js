@@ -6,14 +6,20 @@ const users = {};
 //socket.io server will listen to the incoming events:
 // io.on is a socket.io instance . It will listen to the different users connections
 //socket.on will listen to the events related to a particular connection(user).
+//socket.id is a new id for each connection.
 io.on('connection', socket => {
     socket.on('new-user-joined', name => {
         console.log("New user ", name);
         users[socket.id] = name; //passing a key to a user in the form of name of the user joined.
-        socket.broadcast.emit('user-joined', name);
+        socket.broadcast.emit('user-joined', name); //Sending message of new user-joined to all the already present users.
     });
 
-    socket.on('send', message => {
-        socket.broadcast.emit('receive', {message: message, name: users[socket.id]})
+    socket.on('send', mess => {
+        socket.broadcast.emit('receive', {message: mess, name: users[socket.id]})
+    });
+
+    socket.on('disconnect', mess => {
+        socket.broadcast.emit('left', users[socket.id]);
+        delete users[socket.id];
     });
 })

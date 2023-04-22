@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Socket.IO Chat App</title>
     <!-- Below is linking the socket.io web server to the client.js -->
-    <script src="http://localhost:8000/socket.io/socket.io.js"></script>
+    <!-- defer detaches the scripts from the DOM and are read after the DOM is implemented. -->
+    <script defer src="http://localhost:8000/socket.io/socket.io.js"></script>
     <link rel="stylesheet" href="/css/style.css">
-    <script src="/js/client.js"></script>
+    <script defer src="/js/client.js"></script>
 </head>
 <body>
     <nav>
@@ -16,8 +17,8 @@
     </nav>
 
     <div class="container">
-        <div class="message Right">I'm Ajmat</div>
-        <div class="message Left">I'm Prem</div>
+        <!-- <div class="message Right">I'm Ajmat</div>
+        <div class="message Left">I'm Prem</div> -->
     </div>
     
     <div class="send">
